@@ -1,0 +1,11 @@
+{% extends 'appointmenthome/base.html' %}
+{% block title %}Patient Information{% endblock %}
+{% block body %}
+    <h1 class="container-fluid">Patient information</h1>
+    <ul>
+        {% for patient in user.appointment_set.all %}
+            <li>Name: {{patient.user}} - Place where the appointment is at: {{ patient.location }} </li>
+            <li>Notes: {{ patient.notes }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
